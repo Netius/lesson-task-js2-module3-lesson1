@@ -1,22 +1,23 @@
-const baseUrl = "http://localhost:1337/hotels/";
+import {createList} from "./components/createList.js"
+import {addHotel} from "./components/addHotel.js"
+import {baseUrl} from "./constants/baseUrl.js"
 
-(async function () {
+const hotelsContainer = document.querySelector("#hotels-list");
+
+const addHotelButton = document.getElementById("add-hotel");
+addHotelButton.addEventListener("click", addHotel);
+
+export async function getHotels () {
     try {
         const response = await fetch(baseUrl);
         const json = await response.json();
         createList(json);
+        
     }
     catch (error) {
         console.error(error);
     }
-})();
+};
+getHotels();
 
-const hotelsContainer = document.querySelector("#hotels-list");
 
-const createList = (hotels) => {
-    hotels.forEach(hotel => {
-        hotelsContainer.innerHTML += `
-            <li>${hotel.name} - ${hotel.isOpen}</li>
-        `;
-    });
-}
