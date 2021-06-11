@@ -6,8 +6,12 @@ export function createList(hotels){
 
     hotels.forEach(hotel => {
         hotelsContainer.innerHTML += `
-            <li>${hotel.name} - ${hotel.isOpen} 
-                <button type="button" class="delete-hotel" data-id=${hotel.id}>Delete</button>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+            <div class="font-weight-bold">${hotel.name}</div>
+            ${hotel.isOpen}
+            </div>
+            <button type="button" class="delete-hotel btn btn-danger btn-sm" data-id="${hotel.id}">Delete</button>
             </li>
         `;
     });

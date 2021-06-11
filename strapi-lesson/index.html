@@ -6,14 +6,21 @@
         <title>Strapi - JS2 Module3 Lesson1</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" href=""> -->
-    </head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    </head>
     <body>
-        <h1>Strapi - JS2 Module3 Lesson1</h1>
-        <ul id="hotels-list">
-        </ul>
-        <input type="text" id="input-name"/> 
-        <button type="button" id="add-hotel">Add</button>
+        <header class="container">
+            <h1>Strapi - JS2 Module3 Lesson1</h1>
+            <div class="input-group mb-3">
+            <input class="form-control" placeholder="Hotel's name" type="text" id="input-name"/> 
+            <button class="btn btn-success" type="button" id="add-hotel">Add</button>
+            </div>
+        </header>
+        <section class="container">
+                <ul class="list-group" id="hotels-list">
+                </ul>
+        </section>
+
         <script src="index.js" type="module"></script>
     </body>
 </html>
